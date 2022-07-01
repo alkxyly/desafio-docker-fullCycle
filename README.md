@@ -18,7 +18,7 @@ Code.education Rocks!
 **DockerHub:** https://hub.docker.com/r/alkxyly/codeeducation
 
 
-## Passos para executar a imagem
+## :footprints: Passos para executar a imagem
 
 **Como baixar a imagem:**
 
