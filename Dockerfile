@@ -1,9 +1,13 @@
-FROM golang:1.18
+FROM golang:alpine as builder
 
 WORKDIR /usr/src/app
 
 COPY hello.go .
 
-RUN go mod init hello.go
+RUN CGO_ENABLED=0 go build -o /app hello.go
 
-CMD ["go","run","."]
+FROM  scratch
+
+COPY --from=builder /app /app
+
+ENTRYPOINT [ "./app" ]
